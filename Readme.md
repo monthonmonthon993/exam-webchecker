@@ -8,7 +8,7 @@
 ## Local Deployment
 build & deploy
 ```sh
-cd exam-websites-checker
+cd exam-webchecker
 docker-compose up -d --build
 ```
 down local servers
