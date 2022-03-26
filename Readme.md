@@ -6,8 +6,14 @@
 - csv file
 
 ## Local Deployment
+build & deploy
 ```sh
-docker-compose up --build
+cd exam-websites-checker
+docker-compose up -d --build
+```
+down local servers
+```sh
+docker-compose down
 ```
 
 ## Manaul Test
