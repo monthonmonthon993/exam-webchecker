@@ -1,0 +1,12 @@
+version: '3'
+services:
+  webchecker-ui:
+    build: ./frontend/webchecker
+    container_name: webchecker-ui
+    ports:
+      - 3001:80
+  webchecker-server:
+    build: ./backend
+    container_name: webchecker-server
+    ports:
+      - 8080:8080

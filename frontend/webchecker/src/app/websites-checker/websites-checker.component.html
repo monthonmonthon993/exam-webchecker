@@ -1,0 +1,109 @@
+
+<div class="container box">
+    <div class="row justify-content-center">
+        <div class="col text-center"></div>
+        <div class="col">
+            <p class="upload-text-1 fs-3 fw-normal lh-1">Websites Checker</p>
+        </div>
+        <div class="col text-center"></div>
+        <div class="col text-center"></div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col text-center">
+            <div id="upload-space">
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <div class="upload-rect" appDragDropFileUpload (fileDropped)="onDragAndDropUpload($event)">
+                            <div class="row justify-content-center p-1 mt-3">
+                                <div class="col">
+                                    <div class="upload-icon-csv"></div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col">
+                                    <div class="upload-text-1 fs-2 fw-bold">Drag your .csv file here to start uploading.</div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-3">
+                                    <div class="upload-line-1"></div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="upload-text-2 fs-2 fw-bold">OR</div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="upload-line-1"></div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center align-items-center  p-3 mb-3">
+                                <button type="button" class="btn upload-btn" (click)="fileInput.click()">
+                                    <div class="upload-text-3 fs-3">Browse File</div>
+                                    <input #fileInput type="file" (change)="onFileSelected($event)"
+                                        style="display:none;" accept="text/csv" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div *ngIf="uploading || processing" class="row justify-content-center my-4">
+        <div class="col"></div>
+        <div class="col">
+            <div class="upload-card">
+                <div class="row align-items-center py-3">
+                    <div class="col-2 mx-2">
+                        <div class="upload-icon-csv upload-icon-csv-small"></div>
+                    </div>
+                    <div class="col-9 ms-1">
+                        <div class="row align-items-center">
+                            <div class="col-12 ms-1">
+                                <div><span>{{filename}}</span><span class="float-end">{{uploadProgressNum}}%</span></div>
+                                <progressbar [value]="uploadProgressNum"></progressbar>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-12 ms-1">
+                                <div><span *ngIf="processing">processing...</span><span *ngIf="!processing">done</span></div>
+                                <progressbar type="warning" [striped]="true" [animate]="true" [value]="100"></progressbar>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+
+    <div *ngIf="!uploading && resultReceived" class="row justify-content-center my-4 ">
+        <div class="col-6">
+            <div class="upload-card py-3 px-4">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <div class="upload-text-1 fs-3 fw-bold">Total 30 Websites</div>
+                        <div class="upload-text-2 fs-5">
+                            (Used {{timeCount.minutes}} minute and {{timeCount.seconds}} second)
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-evenly  mt-3 mb-2">
+                    <div class="col-auto">
+                        <div class="upload-up py-1 px-3 position-relative">
+                            <div class="upload-text-3 fs-4">up</div>
+                            <div class="upload-text-3 upload-text-3-large fw-bold position-absolute top-50 start-50 translate-middle">{{upCount}}</div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="upload-down py-1 px-3 position-relative">
+                            <div class="upload-text-4 fs-4">down</div>
+                            <div class="upload-text-4 upload-text-3-large fw-bold position-absolute top-50 start-50 translate-middle">{{downCount}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

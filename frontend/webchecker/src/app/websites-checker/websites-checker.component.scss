@@ -1,0 +1,108 @@
+$text-color-1: #64697F;
+$text-color-2: #95A1BB;
+$text-color-3: #FFFFFF;
+$font-family: 'Roboto';
+
+
+.upload-text-1 {
+    color: $text-color-1;
+    font-family: $font-family;
+    font-style: normal;
+}
+
+.upload-text-2 {
+    color: $text-color-2;
+    font-family: $font-family;
+    font-style: normal;
+}
+
+.upload-text-3 {
+    color: $text-color-3;
+    &-large {
+        font-size: 72px;
+    }
+}
+
+.upload-text-4 {
+    color: $text-color-1;
+    &-large {
+        font-size: 72px;
+    }
+}
+
+.upload-rect {
+    position: relative;
+
+    background: #F5F7FC;
+    border: 4px dashed #C7CDDB;
+    box-sizing: border-box;
+    border-radius: 30px;
+}
+
+
+.upload-icon-csv {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+
+    background: url("../../assets/icon-csv.png");
+    background-size: contain;
+
+    &-small {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+.upload-line-1 {
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background: #B6BED0;
+    border-radius: 10px;
+}
+
+.upload-btn {
+    position: relative;
+    &:hover {
+        font-weight: bold;
+        background: #411bff;
+        cursor: pointer;
+      }
+    margin: auto;
+    height: 75px;
+    width: 385px;
+
+    background: #6749F5;
+    border-radius: 10px;
+}
+
+.box {
+    margin-top: 120px;
+}
+
+.upload-card {
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 30px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+}
+
+.upload-up {
+    position: relative;
+    background: #3FE364;
+    border-radius: 16px;
+    width: 151px;
+    height: 151px;  
+}
+
+.upload-down {
+    position: relative;
+    background: #F5F7FC;
+    border-radius: 16px;
+    width: 151px;
+    height: 151px; 
+}
+
