@@ -63,17 +63,18 @@ export class WebsitesCheckerComponent implements OnInit {
 
     this.uploadSub = upload$.subscribe({
       next: event => {
-        console.log(event)
         if (event.type == HttpEventType.Sent) {
           // sent 
+          console.log('start upload')
         }
         if (event.type == HttpEventType.UploadProgress) {
+          console.log('uploading')
           this.uploadProgressNum = Math.round(100 * (event.loaded / event.total));
           this.uploading = false;
           this.processing = true;
         }
         if (event.type == HttpEventType.ResponseHeader) {
-
+          console.log('response header received!');
         }
         if (event.type == HttpEventType.Response) {
           const res: WebsiteCheckerResponse = event.body;
