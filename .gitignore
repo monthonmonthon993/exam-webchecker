@@ -1,5 +1,3 @@
-frontend/webchecker/node_modules
-*.csv
 
 frontend/webchecker/.angular
 frontend/webchecker/.vscode
